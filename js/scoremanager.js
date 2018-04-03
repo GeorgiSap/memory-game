@@ -5,13 +5,15 @@ const COUNT_OF_MOVES_TO_DISABLE_THIRD_STAR = 25;
 const COUNT_OF_MOVES_TO_DISABLE_SECOND_STAR = 35;
 const COUNT_OF_MOVES_TO_DISABLE_FIRST_STAR = 45;
 
+let timerInstance = new Timer();
+
 function updateMovesCounter() {
 	countOfMoves ++;
 	updateStarRating();
 
 	let countOfMovesText;
 	if (countOfMoves === 1) {
-		startTimer();
+		timerInstance.start();
 		countOfMovesText = "Move";
 	} else {
 		countOfMovesText = "Moves";
@@ -20,24 +22,8 @@ function updateMovesCounter() {
 	moves.textContent = countOfMoves + " " + countOfMovesText;
 }
 
-function startTimer() {
-	let hours = 0;
-	let minutes = 0;
-	let seconds = 0;
-	timerInterval = setInterval(function() {
-		if (seconds < 60) {
-			seconds++;
-		} else {
-			seconds = 0;
-			if (minutes < 60) {
-				minutes++;
-			} else {
-				minutes = 0;
-				hours++;
-			}
-		}
-		timer.textContent = pad(hours) + ":" + pad(minutes) + ":" + pad(seconds);
-	}, 1000);
+function updateTimer() {
+	timer.textContent = timerInstance.getTimeValues().toString();
 }
 
 function updateStarRating() {

@@ -39,6 +39,7 @@
     restartButton.addEventListener("click", restart);
     playAgainButton.addEventListener("click", playAgain);
     closeModalButton.addEventListener("click", closeModal);
+    timerInstance.addEventListener("secondsUpdated", updateTimer);
 
     initCards();
     startGame();

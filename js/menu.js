@@ -1,5 +1,5 @@
 function restart() {
-  clearInterval(timerInterval);
+  timerInstance.stop();
   restartGame();
 }
 
@@ -23,7 +23,7 @@ function resetScorePanel() {
 }
 
 function completeGame() {
-  clearInterval(timerInterval);
+  timerInstance.stop();
   setTimeout(function(){
     openModal();
   }, 500);
