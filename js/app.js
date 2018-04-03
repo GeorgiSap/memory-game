@@ -43,10 +43,14 @@
     startGame();
   });
 
-  function initCards() {
-  	cards = [];
-  	for (cardType of cardTypes) {
-  		cards.push(cardType, cardType);
-  	}
+/**
+* @description Initializes the deck of cards by pushing two cards of each type in its
+*/
+
+function initCards() {
+  cards = [];
+  for (cardType of cardTypes) {
+    cards.push(cardType, cardType);
   }
+}
 

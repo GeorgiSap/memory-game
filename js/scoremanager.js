@@ -6,6 +6,10 @@ const COUNT_OF_MOVES_TO_DISABLE_SECOND_STAR = 35;
 
 let timerInstance = new Timer();
 
+/**
+* @description Updates count of moves, starts timer if necessary and calls method that updates star rating
+*/
+
 function updateMovesCounter() {
 	countOfMoves ++;
 	updateStarRating();
@@ -25,6 +29,10 @@ function updateTimer() {
 	timer.textContent = timerInstance.getTimeValues().toString();
 }
 
+/**
+* @description Updates star rating based on count of moves
+*/
+
 function updateStarRating() {
 	switch(countOfMoves) {
 		case COUNT_OF_MOVES_TO_DISABLE_THIRD_STAR:
@@ -34,8 +42,4 @@ function updateStarRating() {
 		secondStar.style.color = DISABLED_STAR_COLOR;
 		break;
 	}
-}
-
-function pad(item) {
-	return (item.toString().length === 1) ? "0" + item : item;
 }

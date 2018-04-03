@@ -1,3 +1,7 @@
+/**
+* @description Stops timer and starts new game
+*/
+
 function restart() {
   timerInstance.stop();
   restartGame();
@@ -22,6 +26,10 @@ function resetScorePanel() {
   moves.textContent = "0 Moves";
 }
 
+/**
+* @description Stops timer and opens modal after delay
+*/
+
 function completeGame() {
   timerInstance.stop();
   setTimeout(function(){
@@ -39,6 +47,10 @@ function openModal() {
 function closeModal() {
   modal.style.display = "none";
 }
+
+/**
+* @description Clones stars from the score panel to the modal
+*/
 
 function cloneStars() {
   let modalStars = document.querySelector(".modal-stars");

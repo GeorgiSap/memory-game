@@ -1,3 +1,8 @@
+/**
+* @description Generates the list items representing the deck of cards in the DOM and appends them to the empty list with class deck
+* @param {String array} A shuffled array of strings representing the deck of cards
+*/
+
 function createDeck(cards) {
 	const fragment = document.createDocumentFragment();
 

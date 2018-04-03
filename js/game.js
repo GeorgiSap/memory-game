@@ -7,34 +7,39 @@ function startGame() {
   createDeck(cards);
 }
 
-function clickOnCard(event) {
-  let clickedCard = event.target;
-  if (clickedOnClosedCard(clickedCard)) {
+/**
+* @description Decides which action has to be taken based on which element in the deck list has been clicked
+  @param {Event} The click event triggered on the deck list
+  */
 
-    updateMovesCounter();
+  function clickOnCard(event) {
+    let clickedCard = event.target;
+    if (clickedOnClosedCard(clickedCard)) {
 
-    if (isThereAnOpenedCard()) {
-      if (isThereAMatch(clickedCard)) {
-        openMatchingCards(clickedCard);
+      updateMovesCounter();
+
+      if (isThereAnOpenedCard()) {
+        if (isThereAMatch(clickedCard)) {
+          openMatchingCards(clickedCard);
+        } else {
+          openNonMatchingCards(clickedCard);
+          setTimeout(function(){
+            closeNonMatchingCards(clickedCard);
+          }, 500);
+        }
       } else {
-        openNonMatchingCards(clickedCard);
-        setTimeout(function(){
-          closeNonMatchingCards(clickedCard);
-        }, 500);
+        openCard(clickedCard);
       }
-    } else {
-      openCard(clickedCard);
     }
   }
-}
 
-function clickedOnClosedCard(clickedCard) {
-  if (clickedCard.nodeName === "LI") {
-    if (!clickedCard.classList.contains("match")) {
-      if (!clickedCard.classList.contains("open")) {
-        return true;
+  function clickedOnClosedCard(clickedCard) {
+    if (clickedCard.nodeName === "LI") {
+      if (!clickedCard.classList.contains("match")) {
+        if (!clickedCard.classList.contains("open")) {
+          return true;
+        }
       }
     }
+    return false;
   }
-  return false;
-}

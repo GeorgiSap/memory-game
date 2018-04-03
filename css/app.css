@@ -195,8 +195,8 @@ h1 {
         padding: 32px;
     }
     .deck .card {
-      height: 125px;
-      width: 125px; 
+        height: 125px;
+        width: 125px; 
     }
     .score-panel {
         text-align: left;
