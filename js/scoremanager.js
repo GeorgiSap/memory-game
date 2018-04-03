@@ -3,7 +3,6 @@ const DISABLED_STAR_COLOR = "#E8E8E8";
 
 const COUNT_OF_MOVES_TO_DISABLE_THIRD_STAR = 25;
 const COUNT_OF_MOVES_TO_DISABLE_SECOND_STAR = 35;
-const COUNT_OF_MOVES_TO_DISABLE_FIRST_STAR = 45;
 
 let timerInstance = new Timer();
 
@@ -33,9 +32,6 @@ function updateStarRating() {
 		break;
 		case COUNT_OF_MOVES_TO_DISABLE_SECOND_STAR:
 		secondStar.style.color = DISABLED_STAR_COLOR;
-		break;
-		case COUNT_OF_MOVES_TO_DISABLE_FIRST_STAR:
-		firstStar.style.color = DISABLED_STAR_COLOR;
 		break;
 	}
 }

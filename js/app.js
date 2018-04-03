@@ -7,7 +7,6 @@
   let countOfMoves;
   let openedCard;
   let stars;
-  let firstStar;
   let secondStar;
   let thirdStar;
   let moves;
@@ -26,7 +25,6 @@
   	restartButton = document.querySelector(".restart-button");
   	timer = document.querySelector(".timer");
   	stars = document.querySelector(".stars");
-  	firstStar = document.querySelector(".first-star");
   	secondStar = document.querySelector(".second-star");
   	thirdStar = document.querySelector(".third-star");
     modal = document.querySelector(".modal");
